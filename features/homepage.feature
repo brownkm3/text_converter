@@ -4,5 +4,12 @@ Feature: The Welcome Page
     Then I should see the welcome page
 
   Scenario: Converting Text
-    When I submit text via the text box
+    When I go to the homepage
+    And I submit text via the text box
     Then I should see the converted text
+
+  Scenario: Clearing the text box
+    When I go to the homepage
+    And I submit text via the text box
+    And I click clear text 
+    Then I should get a clear text box 

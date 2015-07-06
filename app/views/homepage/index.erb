@@ -2,7 +2,7 @@
 
 <form name="convert_text" id="convert_text_form" method="post" action="/convert_text/">
   <div>
-    <label for='plain_text' class='control-label'>Text to convert</label>
+    <label for='plain_text' class='control-label'>Text to convert </label>
     <input class='form-control' type='text' name='text_to_convert' id='plain_text' value='<%= @text_to_convert %>'>
   </div>
   <button type='submit' class='btn btn-success'>Convert text</button>
@@ -17,4 +17,11 @@
   </tr>
 </table>
 
+<%#<div>%>
+  <%#<label for='converted_text' class='control-label'>Converted Text'>%>
+  <%#<textarea id='converted_text' value='<%= @converted_text %>' >%>
+<%#</div>%>
 
+<form name="clear_text" id="clear_text_form" method="post" action="/clear_text/">
+  <button type='submit' class='btn btn-success'>Clear</button>
+</form>

@@ -8,4 +8,9 @@ class TextConverter < Sinatra::Base
    @converted_text = Converter.convert_text(@text_to_convert)
    erb :'homepage/index'
  end
+ post "/clear_text/" do
+   @text_convert=''
+   @converted_text=''
+   erb :'homepage/index'
+ end
 end

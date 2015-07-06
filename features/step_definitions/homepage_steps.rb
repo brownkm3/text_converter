@@ -7,11 +7,18 @@ Then "I should see the welcome page" do
 end
 
 Then "I submit text via the text box" do
-  visit '/'
   fill_in('Text to convert', with: "twas brillig and the slivy toves")
   click_on('Convert text')
 end
 
 Then "I should see the converted text" do 
   expect(page).to have_content("twas toves")
+end
+
+Then "I click clear text" do
+  click_on('Clear')
+end
+
+Then "I should get a clear text box" do
+  fill_in('Text to convert', with: "")
 end

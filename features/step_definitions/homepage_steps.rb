@@ -13,5 +13,5 @@ Then "I submit text via the text box" do
 end
 
 Then "I should see the converted text" do 
-  expect(page.body).to have_field('Converted text', with: "twas toves")
+  expect(page).to have_content("twas toves")
 end

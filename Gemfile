@@ -1,0 +1,15 @@
+source 'https://rubygems.org'
+gem "activerecord"
+gem "activesupport"
+gem "capybara"
+gem "cucumber"
+gem "sqlite3"
+gem "rake"
+gem 'rack-test'
+gem 'rspec'
+gem 'shoulda-matchers'
+gem "sinatra"
+gem "sinatra-activerecord"
+gem "sinatra-flash"
+gem "byebug"
+gem "haml"

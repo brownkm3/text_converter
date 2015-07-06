@@ -1,0 +1,20 @@
+<h1>Hello Welcome to Text Converter </h1>
+
+<form name="convert_text" id="convert_text_form" method="post" action="/convert_text/">
+  <div>
+    <label for='plain_text' class='control-label'>Text to convert</label>
+    <input class='form-control' type='text' name='text_to_convert' id='plain_text' value='<%= @text_to_convert %>'>
+  </div>
+  <button type='submit' class='btn btn-success'>Convert text</button>
+</form>
+
+<table>
+  <tr>
+      <td>Converted Text <td>
+  </tr>
+  <tr>
+    <td><%= @converted_text %><td>
+  </tr>
+</table>
+
+

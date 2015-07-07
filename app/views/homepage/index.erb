@@ -3,30 +3,22 @@
 <form name="convert_text" id="convert_text_form" method="post" action="/convert_text/">
   <div>
     <label for='plain_text' class='control-label'>Text to convert </label>
-    <input class='form-control' type='text' name='text_to_convert' id='plain_text' value='<%= @text_to_convert %>'>
+    <textarea class='form-control' type='text' rows='4' cols='100' name='text_to_convert' id='plain_text' value='<%= @text_to_convert %>'>
+    </textarea>
   </div>
   <button type='submit' class='btn btn-success'>Convert text</button>
 </form>
+<div>
+  <textarea class='form-control' type='text' rows='4' cols='100' name='converted_text' id='converted_text'>
+    <% @converted_text.each { |line| puts line.each } %>
+  </textarea>
+</div
 
-<table>
-  <tr>
-    <td>Converted Text <td>
-  </tr>
-  <tr>
-    <td id="converted_text"><%= @converted_text %><td>
-  </tr>
-</table>
+<form name="clear_text" id="clear_text_form" method="post" action="/clear_text/">
+  <button type='submit' class='btn btn-success'>Clear</button>
+</form>
 
-<%#<div>%>
-  <%#<label for='converted_text' class='control-label'>Converted Text'>%>
-    <%#<textarea id='converted_text' value='<%= @converted_text  >%>
-      <%#</div>%>
-
-    <form name="clear_text" id="clear_text_form" method="post" action="/clear_text/">
-      <button type='submit' class='btn btn-success'>Clear</button>
-    </form>
-
-    <form action="/upload_file/" method="POST" enctype="multipart/form-data">
-      <input type="file" name="file">
-      <input type="submit" value="Upload file">
-    </form>
+<form action="/upload_file/" method="POST" enctype="multipart/form-data">
+  <input type="file" name="file">
+  <input type="submit" value="Upload file">
+</form>

@@ -18,3 +18,8 @@ Feature: The Welcome Page
     When I go to the homepage
     And I upload a file to be converted
     Then I should see the converted text
+
+  Scenario: Converting Text
+    When I go to the homepage
+    And I submit multi-line text via the text box
+    Then I should see each line of converted text

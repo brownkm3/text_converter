@@ -12,7 +12,7 @@ When "I submit text via the text box" do
 end
 
 Then "I should see the converted text" do 
-  expect(page).to have_content("twas toves")
+  expect(page.body).to have_field('Converted text', with: "twas toves")
 end
 
 When "I click clear text" do
@@ -27,4 +27,11 @@ end
 When 'I upload a file to be converted' do
   attach_file("file", File.join(Sinatra::Application.root, 'features', 'support', 'test.txt'))
   click_button "Upload file"
+end
+When  'I submit multi-line text via the text box' do
+  fill_in('Text to convert', with: "twas brillig and the slivy toves\n did gyre and gimble\n in the wabe")
+  click_on('Convert text')
+end
+Then 'I should see each line of converted text' do
+
 end

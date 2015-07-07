@@ -10,7 +10,7 @@
 
 <table>
   <tr>
-      <td>Converted Text <td>
+    <td>Converted Text <td>
   </tr>
   <tr>
     <td id="converted_text"><%= @converted_text %><td>
@@ -19,9 +19,14 @@
 
 <%#<div>%>
   <%#<label for='converted_text' class='control-label'>Converted Text'>%>
-  <%#<textarea id='converted_text' value='<%= @converted_text %>' >%>
-<%#</div>%>
+    <%#<textarea id='converted_text' value='<%= @converted_text  >%>
+      <%#</div>%>
 
-<form name="clear_text" id="clear_text_form" method="post" action="/clear_text/">
-  <button type='submit' class='btn btn-success'>Clear</button>
-</form>
+    <form name="clear_text" id="clear_text_form" method="post" action="/clear_text/">
+      <button type='submit' class='btn btn-success'>Clear</button>
+    </form>
+
+    <form action="/upload_file/" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <input type="submit" value="Upload file">
+    </form>

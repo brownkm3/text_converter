@@ -3,16 +3,17 @@
 <form name="convert_text" id="convert_text_form" method="post" action="/convert_text/">
   <div>
     <label for='plain_text' class='control-label'>Text to convert </label>
-    <textarea class='form-control' type='text' rows='4' cols='100' name='text_to_convert' id='plain_text' value='<%= @text_to_convert %>'>
-    </textarea>
+    <textarea class='form-control' type='text' cols='100' name='text_to_convert' id='plain_text' value='<%=@text_to_convert%>'><%=@text_to_convert%></textarea>
   </div>
   <button type='submit' class='btn btn-success'>Convert text</button>
 </form>
 <div>
-  <textarea class='form-control' type='text' rows='4' cols='100' name='converted_text' id='converted_text'>
-    <% @converted_text.each { |line| puts line.each } %>
-  </textarea>
-</div
+    <label for='converted_text' class='control-label'>Converted text</label>
+  <textarea class='form-control' type='text' cols='100' name='converted_text' id='converted_text'>
+<% @converted_text.each do |line| %>
+<%=line%>
+<% end %></textarea>
+</div>
 
 <form name="clear_text" id="clear_text_form" method="post" action="/clear_text/">
   <button type='submit' class='btn btn-success'>Clear</button>

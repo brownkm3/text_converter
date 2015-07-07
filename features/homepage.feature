@@ -3,7 +3,7 @@ Feature: The Welcome Page
     When I go to the homepage
     Then I should see the welcome page
 
-  Scenario: Converting Text
+  Scenario: Converting Text from text box
     When I go to the homepage
     And I submit text via the text box
     Then I should see the converted text
@@ -14,7 +14,7 @@ Feature: The Welcome Page
     And I click clear text
     Then I should get a clear text box
 
-  Scenario: Converting Text
+  Scenario: Converting Text from file
     When I go to the homepage
     And I upload a file to be converted
     Then I should see the converted text

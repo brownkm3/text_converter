@@ -11,8 +11,8 @@ When "I submit text via the text box" do
   click_on('Convert text')
 end
 
-Then "I should see the converted text" do 
-  expect(page.body).to have_field('Converted text', with: "twas toves")
+Then "I should see the converted text" do
+  expect(page.body).to have_field('Converted text', with: "twas toves\n")
 end
 
 When "I click clear text" do
@@ -23,15 +23,20 @@ Then "I should get a clear text box" do
   expect(page.body).to have_field('Text to convert', with: "")
 end
 
-
 When 'I upload a file to be converted' do
   attach_file("file", File.join(Sinatra::Application.root, 'features', 'support', 'test.txt'))
   click_button "Upload file"
 end
 When  'I submit multi-line text via the text box' do
-  fill_in('Text to convert', with: "twas brillig and the slivy toves\n did gyre and gimble\n in the wabe")
+  fill_in('Text to convert', with: "twas brillig and the slivy toves\ndid gyre and gimble\nin the wabe")
   click_on('Convert text')
 end
 Then 'I should see each line of converted text' do
-
+  expect(page.body).to have_field('Converted text', with: "twas toves\ndid gimble\nin wabe\n")
+end
+When 'I click submit without chosing a file' do
+   click_on('submit_upload')
+end
+Then 'I should see an error and get the opportunity to enter a file' do
+  expect(page).to have_content("please choose a file before submitting")
 end

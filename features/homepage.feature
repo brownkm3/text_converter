@@ -19,6 +19,11 @@ Feature: The Welcome Page
     And I upload a file to be converted
     Then I should see the converted text
 
+  Scenario: Clicking submit before a file is chosen
+    When I go to the homepage
+    And I click submit without chosing a file
+    Then I should see an error and get the opportunity to enter a file
+
   Scenario: Converting Text
     When I go to the homepage
     And I submit multi-line text via the text box

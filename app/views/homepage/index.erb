@@ -1,4 +1,6 @@
-<h1>Hello Welcome to Text Converter </h1>
+<% content_for :title do %>
+  Text Converter
+<% end %>
 
 <form name="convert_text" id="convert_text_form" method="post" action="/convert_text/">
   <div>
@@ -8,11 +10,19 @@
   <button type='submit' class='btn btn-success'>Convert text</button>
 </form>
 <div>
-    <label for='converted_text' class='control-label'>Converted text</label>
-  <textarea class='form-control' type='text' cols='100' name='converted_text' id='converted_text'>
+  <table>
+    <td>
+      <tr>
+        <label for='converted_text' class='control-label'>Converted text</label>
+      </tr>
+      <tr>
+        <textarea class='form-control' type='text' cols='100' name='converted_text' id='converted_text'>
 <% @converted_text.each do |line| %>
 <%=line%>
 <% end %></textarea>
+      </tr>
+    </td>
+  </table>
 </div>
 
 <form name="clear_text" id="clear_text_form" method="post" action="/clear_text/">

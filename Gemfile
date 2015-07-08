@@ -10,6 +10,8 @@ gem 'rspec'
 gem 'shoulda-matchers'
 gem "sinatra"
 gem "sinatra-activerecord"
+gem "sinatra-contrib"
 gem "sinatra-flash"
 gem "byebug"
 gem "haml"
+gem "will_paginate-bootstrap"

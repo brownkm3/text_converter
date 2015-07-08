@@ -3,7 +3,7 @@ When "I go to the homepage" do
 end
 
 Then "I should see the welcome page" do
-      expect(page).to have_content("Hello Welcome to Text Converter")
+      expect(page).to have_content("Welcome to TextConverter")
 end
 
 When "I submit text via the text box" do

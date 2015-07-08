@@ -7,7 +7,7 @@
     <label for='plain_text' class='control-label'>Text to convert </label>
     <textarea class='form-control' type='text' cols='100' name='text_to_convert' id='plain_text' value='<%=@text_to_convert%>'><%=@text_to_convert%></textarea>
   </div>
-  <button type='submit' class='btn btn-success'>Convert text</button>
+  <button type='submit' class='btn btn-primary'>Convert text</button>
 </form>
 <div>
   <table>
@@ -26,10 +26,10 @@
 </div>
 
 <form name="clear_text" id="clear_text_form" method="post" action="/clear_text/">
-  <button type='submit' class='btn btn-success'>Clear</button>
+  <button type='submit' class='btn btn-primary'>Clear</button>
 </form>
 
 <form action="/upload_file/" method="POST" enctype="multipart/form-data">
   <input type="file" name="file">
-  <input type="submit" value="Upload file">
+  <button type="submit" class='btn btn-primary'>Upload file</button>
 </form>
